@@ -1,0 +1,17 @@
+[package]
+name = "dathost-api"
+version = "0.1.0"
+authors = ["John Peel <john@dgby.org>"]
+edition = "2021"
+license = "MIT OR Apache-2.0"
+
+[dependencies]
+api-client = "0.1"
+bytes = "1.2"
+futures = "0.3"
+mime_guess = "2.0"
+reqwest = { version = "0.11", features = ["rustls-tls", "json", "multipart", "stream"] }
+serde = { version = "1.0", features = ["derive"] }
+serde_json = "1.0"
+tokio = { version = "1.21", default-features = false }
+tokio-util = "0.7"
