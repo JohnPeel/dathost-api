@@ -56,11 +56,12 @@ impl DathostApi {
         use reqwest::multipart::Form;
 
         let part = part_from_file_path(request.file.as_path()).await?;
-        Ok(self.request::<()>(
-            reqwest::Method::POST,
-            format!("{BASE_URL}/game-servers/{server_id}/files/{path}").as_str(),
-            api_client::Body::Multipart(Form::new().part("file", part)),
-        )
+        Ok(self
+            .request::<()>(
+                reqwest::Method::POST,
+                format!("{BASE_URL}/game-servers/{server_id}/files/{path}").as_str(),
+                api_client::Body::Multipart(Form::new().part("file", part)),
+            )
             .await
             .map(|res| res.status())?)
     }

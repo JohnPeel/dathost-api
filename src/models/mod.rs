@@ -1,4 +1,3 @@
-
 mod account;
 mod custom_domains;
 mod game_server;
