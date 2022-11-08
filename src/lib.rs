@@ -10,6 +10,7 @@ use crate::util::part_from_file_path;
 
 const BASE_URL: &str = "https://dathost.com/api/v1";
 
+#[derive(Clone)]
 pub struct DathostApi {
     client: Client,
     username: String,
